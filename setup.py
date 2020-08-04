@@ -9,7 +9,14 @@ with open("README.md") as readme_file:
     readme = readme_file.read()
 
 setup_requirements = [
-    "pytest-runner>=5.2",
+    'scikit-image>=0.16.2',
+    'aicsimageio>=3.0.3',
+    'SimpleITK==1.2.4',
+    'numpy>=1.17.3',
+    'scipy>=1.3.1',
+    'pandas>=0.25.2',
+    'pyyaml>=5.3',
+    'tqdm>=4.36.1'
 ]
 
 test_requirements = [
@@ -62,10 +69,10 @@ setup(
     ],
     description="Rigid registration algorithm for generating training/testing data for transfer function model",
     entry_points={
-        "console_scripts": [
-            "my_example=aics_tf_registration.bin.my_example:main"
-        ],
-    },
+          "console_scripts": [
+              "run_alignment={}.bin.run_alignment:main".format(PACKAGE_NAME)
+          ]
+      },
     install_requires=requirements,
     license="Allen Institute Software License",
     long_description=readme,
@@ -76,7 +83,6 @@ setup(
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*"]),
     python_requires=">=3.7",
     setup_requires=setup_requirements,
-    test_suite="aics_tf_registration/tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
     url="https://github.com/mfs4rd/aics_tf_registration",
