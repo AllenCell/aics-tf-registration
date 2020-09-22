@@ -11,7 +11,7 @@ from skimage import io as skio
 from skimage.filters import threshold_otsu
 from tqdm import tqdm
 
-from aics3dalignment.core import alignment, preprocessing
+from aics_tf_registration.core import alignment, preprocessing
 
 
 class Image_Aligner:

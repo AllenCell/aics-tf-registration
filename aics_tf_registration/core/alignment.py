@@ -15,7 +15,7 @@ from skimage.filters import gaussian, median, threshold_otsu
 from skimage.measure import ransac
 from skimage.metrics import structural_similarity as ssim
 
-from aics3dalignment.core.preprocessing import rescale_image
+from aics_tf_registration.core.preprocessing import rescale_image
 
 ###############################################################################
 ## Main Functions
@@ -33,7 +33,7 @@ def perform_alignment(source: np.ndarray,
                         target_output_channel: list,
                         prealign_z: bool,
                         denoise_z: bool,
-                        use_brute: bool,
+                        use_refinement: bool,
                         save_composite: bool):
     """ Wrapper function for all of the steps necessary to calculate alignment.
 
@@ -50,7 +50,7 @@ def perform_alignment(source: np.ndarray,
         - target_output_channel: target image channel to apply alignment on
         - prealign: whether to calculate intitial estimate of z-alignment
         - denoise_z: denoise z-stacks prior to z-alignment
-        - use_brute: refine the final alignment through brute force search
+        - use_refinement: refine the final alignment by repeating workflow in the target image resolution
         - save_composite: save composite image of final alignment
 
     Returns
@@ -160,7 +160,7 @@ def perform_alignment(source: np.ndarray,
 
     # refine alignment and apply to output channel
     logger.info('Beginning finalization of alignment')
-    if use_brute:
+    if use_refinement:
         logger.info('Refinement enabled. This part might take a while ...')
 
     fixed_final = moving_final = None
@@ -179,7 +179,7 @@ def perform_alignment(source: np.ndarray,
                                         scale_factor_xy,
                                         scale_factor_z)
 
-    if use_brute:
+    if use_refinement:
         if fixed.size > moving.size:
             moving_crops, fixed_crops = final_refinement(moving,
                                             fixed,
@@ -415,7 +415,8 @@ def align_z(fixed: np.ndarray, moving: np.ndarray, prealign: bool, denoise: bool
     ------------
         - fixed: image with larger field of view
         - moving: image with smaller field of view
-        - prealign: whether to initially estimate alignment
+        - prealign: whether to initially estimate z alignment by matching middle slices of coarse segmentations using Otsu
+        - denoise: "denoise" image through 10th & 90th percentile clipping
 
     Return
     ------------
@@ -527,7 +528,7 @@ def finalize_alignment(fixed: np.ndarray,
                         fixed_2dAlign_offset_x: int,
                         scale_factor_xy: float,
                         scale_factor_z: float):
-    """ Use brute-force search adjust the final 3d alignment.
+    """ Use refineuse_refinement-force search adjust the final 3d alignment.
 
     Parameters
     ------------
@@ -541,8 +542,8 @@ def finalize_alignment(fixed: np.ndarray,
         - fixed_addition_offset_x: rigid offest in x from itk alignment
         - fixed_2dAlign_offset_y: rigid offset in y from 2d alignment
         - fixed_2dAlign_offset_x: rigid offest in x from 2d alignment
+        - scale_factor_xy: upsample/downsample rate for x and y
         - scale_factor_z: upsample/downsample rate for z
-        - use_brute_refinement: whether to brute force seach to refine alignment by +/-1 pixel using structural similarity
 
     Returns
     ------------
@@ -619,8 +620,24 @@ def final_refinement(lr: np.ndarray,
                      scale_factor_xy: float,
                      scale_factor_z: float,
                      min_subcrop_xy: int,
-                     min_subcrop_z: int,
-                     error_thresh: float):
+                     min_subcrop_z: int):
+    """ Adjust the final 3d alignment by repeating alignment in high resolution image scale.
+
+    Parameters
+    ------------
+        - lr: low-res (source) image after initial alignment
+        - hr: high-res (target) image after initial alignment
+        - scale_factor_xy: upsample/downsample rate for x and y
+        - scale_factor_z: upsample/downsample rate for z
+        - min_subcrop_xy: minimum number of pixels to crop in x and y to ensure dimensions match scale factor
+        - min_subcrop_z: minimum number of pixels to crop in z to ensure dimensions match scale factor
+
+    Returns
+    ------------
+        - fixed_final: aligned and cropped fixed image
+        - moving_final: aligned and cropped moving image
+
+    """
 
     logger = logging.getLogger('align.refine')
     logger.setLevel(logging.DEBUG)

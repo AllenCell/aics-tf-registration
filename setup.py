@@ -8,6 +8,8 @@ from setuptools import find_packages, setup
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
+PACKAGE_NAME = 'aics_tf_registration'
+
 setup_requirements = [
     'scikit-image>=0.16.2',
     'aicsimageio>=3.0.3',

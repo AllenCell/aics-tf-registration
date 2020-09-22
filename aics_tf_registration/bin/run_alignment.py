@@ -2,7 +2,7 @@ import argparse
 import logging
 import sys
 import traceback
-from aics3dalignment.core import image_aligner
+from aics_tf_registration.core import image_aligner
 import logging
 from datetime import datetime
 import os
