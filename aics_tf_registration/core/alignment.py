@@ -186,16 +186,14 @@ def perform_alignment(source: np.ndarray,
                                             scale_factor_xy,
                                             scale_factor_z,
                                             15,
-                                            3,
-                                            0.02)
+                                            3)
         else:
             fixed_crops, moving_crops = final_refinement(fixed,
                                             moving,
                                             1/scale_factor_xy,
                                             1/scale_factor_z,
                                             15,
-                                            3,
-                                            0.02)
+                                            3)
 
         if fixed_crops is None:
             return None, None, None
@@ -497,7 +495,7 @@ def align_z(fixed: np.ndarray, moving: np.ndarray, prealign: bool, denoise: bool
         resampler.SetInterpolator(sitk.sitkLinear)
         resampler.SetDefaultPixelValue(100)
         resampler.SetTransform(outTx)
-        out = resampler.Execute(moving_itk)
+        resampler.Execute(moving_itk)
     else:
         logger.warning(f'Z-Alignment failed: SITK_NOSHOW')
         return None, None, None
@@ -620,7 +618,8 @@ def final_refinement(lr: np.ndarray,
                      scale_factor_xy: float,
                      scale_factor_z: float,
                      min_subcrop_xy: int,
-                     min_subcrop_z: int):
+                     min_subcrop_z: int,
+                     error_thresh: float=0.02):
     """ Adjust the final 3d alignment by repeating alignment in high resolution image scale.
 
     Parameters
@@ -704,7 +703,7 @@ def final_refinement(lr: np.ndarray,
         resampler.SetInterpolator(sitk.sitkLinear)
         resampler.SetDefaultPixelValue(100)
         resampler.SetTransform(outTx)
-        out = resampler.Execute(lr_itk)
+        resampler.Execute(lr_itk)
     else:
         logger.warning(f'Z-Alignment failed: SITK_NOSHOW')
         return None, None

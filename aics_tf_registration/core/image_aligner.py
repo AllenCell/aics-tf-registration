@@ -227,8 +227,12 @@ class Image_Aligner:
                 # add content label channels and add to output channel list
                 source = np.concatenate((source, source_label), axis=0)
                 target = np.concatenate((target, target_label), axis=0)
-                self.source_output_channel.append(source.shape[0]-1)
-                self.target_output_channel.append(target.shape[0]-1)
+
+                sh_source = source.shape
+                sh_target = target.shape
+
+                self.source_output_channel.append(sh_source[0]-1)
+                self.target_output_channel.append(sh_target[0]-1)
 
 
 
