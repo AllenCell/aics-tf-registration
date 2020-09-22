@@ -11,14 +11,18 @@ with open("README.md") as readme_file:
 PACKAGE_NAME = 'aics_tf_registration'
 
 setup_requirements = [
+    "wheel>=0.34.2",
+    "setuptools",
     'scikit-image>=0.16.2',
-    'aicsimageio>=3.0.3',
-    'SimpleITK==1.2.4',
+    'aicsimageio>=3.2.0',
+    'SimpleITK>=1.2.4',
     'numpy>=1.17.3',
     'scipy>=1.3.1',
     'pandas>=0.25.2',
-    'pyyaml>=5.3',
-    'tqdm>=4.36.1'
+    'tqdm>=4.36.1',
+    'ruamel.yaml',
+    # 'tornado>=6.0.3'
+    # 'pyyaml>5.1.2'
 ]
 
 test_requirements = [
@@ -46,7 +50,9 @@ dev_requirements = [
     "wheel>=0.34.2",
 ]
 
-requirements = []
+requirements = [
+    setup_requirements,
+]
 
 extra_requirements = {
     "setup": setup_requirements,
@@ -55,6 +61,7 @@ extra_requirements = {
     "all": [
         *requirements,
         *dev_requirements,
+        *test_requirements,
     ]
 }
 
@@ -69,12 +76,12 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    description="Rigid registration algorithm for generating training/testing data for transfer function model",
+    description="Rigid registration algorithm for generating training/testing data for transfer function model", # noqa
     entry_points={
-          "console_scripts": [
-              "run_alignment={}.bin.run_alignment:main".format(PACKAGE_NAME)
-          ]
-      },
+        "console_scripts": [
+            "run_alignment={}.bin.run_alignment:main".format(PACKAGE_NAME)
+        ]
+    },
     install_requires=requirements,
     license="Allen Institute Software License",
     long_description=readme,

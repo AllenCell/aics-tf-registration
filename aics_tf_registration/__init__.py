@@ -8,6 +8,6 @@ __email__ = "{{ filip.sluzewski@alleninstitute.org }}"
 # Details in CONTRIBUTING.md
 __version__ = "1.0.0"
 
+
 def get_module_version():
     return __version__
-

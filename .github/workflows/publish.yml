@@ -18,11 +18,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install setuptools wheel
+        pip install .[all]
     - name: Build Package
       run: |
         python setup.py sdist bdist_wheel
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
-        user: MFSluzewski
+        user: mfs4rd
         password: ${{ secrets.PYPI_TOKEN }}
