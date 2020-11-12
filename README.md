@@ -4,7 +4,7 @@
 [![Documentation](https://github.com/aics-int/aics_tf_registration/workflows/Documentation/badge.svg)](https://aics-int.github.io/aics_tf_registration)
 [![Code Coverage](https://codecov.io/gh/aics-int/aics_tf_registration/branch/master/graph/badge.svg)](https://codecov.io/gh/aics-int/aics_tf_registration)
 
-3D rigid registration algorithm for generating training/testing data for transfer function model
+3D rigid registration workflow for generating training/testing data for transfer function model
 
 ---
 
