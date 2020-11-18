@@ -1,0 +1,22 @@
+aics\_tf\_registration.bin package
+==================================
+
+Submodules
+----------
+
+aics\_tf\_registration.bin.run\_alignment module
+------------------------------------------------
+
+.. automodule:: aics_tf_registration.bin.run_alignment
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: aics_tf_registration.bin
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,38 @@
+aics\_tf\_registration.core package
+===================================
+
+Submodules
+----------
+
+aics\_tf\_registration.core.alignment module
+--------------------------------------------
+
+.. automodule:: aics_tf_registration.core.alignment
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aics\_tf\_registration.core.image\_aligner module
+-------------------------------------------------
+
+.. automodule:: aics_tf_registration.core.image_aligner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aics\_tf\_registration.core.preprocessing module
+------------------------------------------------
+
+.. automodule:: aics_tf_registration.core.preprocessing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: aics_tf_registration.core
+   :members:
+   :undoc-members:
+   :show-inheritance:

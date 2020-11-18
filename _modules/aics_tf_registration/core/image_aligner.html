@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aics_tf_registration.core.image_aligner &mdash; AICS Transfer Function Registration 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> AICS Transfer Function Registration
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#stable-release">Stable release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#from-sources">From sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Package modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../aics_tf_registration.html">aics_tf_registration package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../aics_tf_registration.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../aics_tf_registration.bin.html">aics_tf_registration.bin package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../aics_tf_registration.core.html">aics_tf_registration.core package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../aics_tf_registration.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../aics_tf_registration.html#module-aics_tf_registration.version">aics_tf_registration.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../aics_tf_registration.html#module-aics_tf_registration">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../math.html">Math notation example</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">AICS Transfer Function Registration</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../aics_tf_registration.html">aics_tf_registration</a> &raquo;</li>
+        
+      <li>aics_tf_registration.core.image_aligner</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aics_tf_registration.core.image_aligner</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ruamel.yaml</span> <span class="kn">import</span> <span class="n">YAML</span>
+<span class="kn">from</span> <span class="nn">aicsimageio</span> <span class="kn">import</span> <span class="n">AICSImage</span><span class="p">,</span> <span class="n">writers</span>
+<span class="kn">from</span> <span class="nn">skimage.filters</span> <span class="kn">import</span> <span class="n">threshold_otsu</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">aics_tf_registration.core</span> <span class="kn">import</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">preprocessing</span>
+
+
+<div class="viewcode-block" id="Image_Aligner"><a class="viewcode-back" href="../../../aics_tf_registration.core.html#aics_tf_registration.core.image_aligner.Image_Aligner">[docs]</a><span class="k">class</span> <span class="nc">Image_Aligner</span><span class="p">:</span>
+    <span class="c1">###############################################################################</span>
+    <span class="c1"># Main Functions</span>
+    <span class="c1">###############################################################################</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load settings and file paths from configuration file</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ------------</span>
+<span class="sd">            - config_path: path to yaml file with settings and file paths</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Load configuration file</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;Aligner.init&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Reading settings from config file&quot;</span><span class="p">)</span>
+
+        <span class="n">yaml</span> <span class="o">=</span> <span class="n">YAML</span><span class="p">(</span><span class="n">typ</span><span class="o">=</span><span class="s2">&quot;safe&quot;</span><span class="p">)</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+
+        <span class="c1"># Load input/output settings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;source_path&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;target_path&quot;</span><span class="p">]</span>
+        <span class="n">out_path</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;output_path&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;save_alignment_composite&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Make sure input/output folders are valid and create output folders</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Source path &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">source_path</span><span class="si">}</span><span class="s2">&#39; is invalid&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target path &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target_path</span><span class="si">}</span><span class="s2">&#39; is invalid&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output path &#39;</span><span class="si">{</span><span class="n">out_path</span><span class="si">}</span><span class="s2">&#39; is invalid&quot;</span><span class="p">)</span>
+                <span class="k">raise</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_output</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_output</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">composite_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s2">&quot;alignment_composite&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">composite_path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">composite_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">composite_path</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># List images in source and target folders and check they are not empty</span>
+        <span class="c1"># and equal in length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_image_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_files</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_image_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_path</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_files</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Source folder is empty of valid image files&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_files</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Target folder is empty of valid image files&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_files</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_files</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Source folder has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> images while target folder has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_files</span><span class="p">)</span><span class="si">}</span><span class="s2">. Some images might be missing.&quot;</span>  <span class="c1"># noqa</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Load alignment parameters and check validity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_factor_xy</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;scale_factor_xy&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_factor_z</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;scale_factor_z&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;transforms&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_crop</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;source_crop&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_crop</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;target_crop&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;smaller_fov_modality&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prealign_z</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;prealign_z&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_refinement</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;use_refinement&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">denoise_z</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;denoise_z&quot;</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pad_z</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;pad_z&quot;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pad_z</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pad_size</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;pad_size&quot;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pad_size</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;smaller_fov_modatlity&#39; must be &#39;source&#39; or &#39;target&#39;, not </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa</span>
+            <span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="n">valid_transforms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flip_lr&quot;</span><span class="p">,</span> <span class="s2">&quot;flip_ud&quot;</span><span class="p">,</span> <span class="s2">&quot;rotate_90&quot;</span><span class="p">,</span> <span class="s2">&quot;rotate_180&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">transform</span> <span class="ow">in</span> <span class="n">valid_transforms</span>
+            <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transform</span><span class="si">}</span><span class="s2"> is not a valid option. Valid transforms are: </span><span class="si">{</span><span class="n">valid_transforms</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa</span>
+                <span class="p">)</span>
+                <span class="k">raise</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_alignment_channel</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;source_alignment_channel&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_alignment_channel</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;target_alignment_channel&quot;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;source_output_channel&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;target_output_channel&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Image_Aligner.align_images"><a class="viewcode-back" href="../../../aics_tf_registration.core.html#aics_tf_registration.core.image_aligner.Image_Aligner.align_images">[docs]</a>    <span class="k">def</span> <span class="nf">align_images</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Run alignment algorithm on image pairs in dataset&quot;&quot;&quot;</span>
+
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;Aligner.run&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Beginning alignments on dataset&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">source_file</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_files</span><span class="p">)):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;--------------------------------------------------------------------&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Beginning alignment of image pair </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> with filename &#39;</span><span class="si">{</span><span class="n">source_file</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;--------------------------------------------------------------------&quot;</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Check if the source image has a match in the list of target images</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">source_file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_files</span>
+            <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;File with name &#39;</span><span class="si">{</span><span class="n">source_file</span><span class="si">}</span><span class="s2">&#39; not found among target files. Skipping this image pair.&quot;</span>  <span class="c1"># noqa</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output</span><span class="p">,</span> <span class="n">source_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.czi&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">))</span>
+            <span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;File with name &#39;</span><span class="si">{</span><span class="n">source_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.czi&#39;</span><span class="p">,</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; already exists in output folder. Skipping this image pair.&quot;</span>  <span class="c1"># noqa</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Load and preprocess images</span>
+            <span class="n">target_file</span> <span class="o">=</span> <span class="n">source_file</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="n">AICSImage</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_path</span><span class="p">,</span> <span class="n">source_file</span><span class="p">))</span><span class="o">.</span><span class="n">data</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="n">AICSImage</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_path</span><span class="p">,</span> <span class="n">target_file</span><span class="p">))</span><span class="o">.</span><span class="n">data</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">source</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Rearranging channels in source image. Current shape is </span><span class="si">{</span><span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa</span>
+                    <span class="p">)</span>
+                    <span class="n">source</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">rearrange_multichannel_image</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New shape is </span><span class="si">{</span><span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Rearranging channels in target image. Current shape is </span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># noqa</span>
+                    <span class="p">)</span>
+                    <span class="n">target</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">rearrange_multichannel_image</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New shape is </span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad_z</span><span class="p">:</span>
+                <span class="c1"># estimate background threshold of each channel</span>
+                <span class="n">source_bg</span> <span class="o">=</span> <span class="p">[</span><span class="n">threshold_otsu</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+                <span class="n">target_bg</span> <span class="o">=</span> <span class="p">[</span><span class="n">threshold_otsu</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+
+                <span class="c1"># determine mean and standard deviation of background signal</span>
+                <span class="n">source_means</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">source</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">thresh</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">source_bg</span><span class="p">)</span>
+                <span class="p">]</span>
+                <span class="n">source_stds</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">source</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">thresh</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">source_bg</span><span class="p">)</span>
+                <span class="p">]</span>
+                <span class="n">target_means</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">target</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">thresh</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">target_bg</span><span class="p">)</span>
+                <span class="p">]</span>
+                <span class="n">target_stds</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">target</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="p">(</span><span class="n">thresh</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">target_bg</span><span class="p">)</span>
+                <span class="p">]</span>
+
+                <span class="c1"># generate synthetic background layers as gaussian noise</span>
+                <span class="n">source_pad</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">target_pad</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">source_means</span><span class="p">,</span> <span class="n">source_stds</span><span class="p">)):</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+                        <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad_size</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">source_pad</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">source_pad</span> <span class="o">=</span> <span class="n">temp</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">source_pad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">source_pad</span><span class="p">,</span> <span class="n">temp</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">target_means</span><span class="p">,</span> <span class="n">target_stds</span><span class="p">)):</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+                        <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad_size</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">target_pad</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">target_pad</span> <span class="o">=</span> <span class="n">temp</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">target_pad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">target_pad</span><span class="p">,</span> <span class="n">temp</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="c1"># create channel labeling padding in source and target images</span>
+                <span class="n">source_pad_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">source_pad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">source_content_label</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">source</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span>
+                <span class="p">)</span>
+                <span class="n">source_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">source_pad_label</span><span class="p">,</span> <span class="n">source_content_label</span><span class="p">,</span> <span class="n">source_pad_label</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+                <span class="p">)</span>
+
+                <span class="n">target_pad_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">target_pad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">target_content_label</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span>
+                <span class="p">)</span>
+                <span class="n">target_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">target_pad_label</span><span class="p">,</span> <span class="n">target_content_label</span><span class="p">,</span> <span class="n">target_pad_label</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+                <span class="p">)</span>
+
+                <span class="c1"># pad images with synthetic layers</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">source_pad</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">source_pad</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">target_pad</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">target_pad</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New source shape is </span><span class="si">{</span><span class="n">source</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New target shape is </span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="c1"># add content label channels and add to output channel list</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">source</span><span class="p">,</span> <span class="n">source_label</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">target</span><span class="p">,</span> <span class="n">target_label</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="n">sh_source</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">shape</span>
+                <span class="n">sh_target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">shape</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sh_source</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sh_target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cropping source image&quot;</span><span class="p">)</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">precrop_image</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_crop</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cropping target image&quot;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">precrop_image</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_crop</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span> <span class="o">==</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Applying image transforms to source&quot;</span><span class="p">)</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span> <span class="o">==</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Applying transforms to target&quot;</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">)</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Beginning alignment process&quot;</span><span class="p">)</span>
+            <span class="n">a_src</span><span class="p">,</span> <span class="n">a_tgt</span><span class="p">,</span> <span class="n">composite</span> <span class="o">=</span> <span class="n">alignment</span><span class="o">.</span><span class="n">perform_alignment</span><span class="p">(</span>
+                <span class="n">source</span><span class="p">,</span>
+                <span class="n">target</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">smaller_fov_modality</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">scale_factor_xy</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">scale_factor_z</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source_alignment_channel</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_alignment_channel</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">source_output_channel</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_output_channel</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">prealign_z</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">denoise_z</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">use_refinement</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">a_src</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alignment #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> succeeded&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;.czi&quot;</span> <span class="ow">in</span> <span class="n">source_file</span><span class="p">:</span>
+                    <span class="n">source_file</span> <span class="o">=</span> <span class="n">source_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.czi&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">)</span>
+                    <span class="n">target_file</span> <span class="o">=</span> <span class="n">target_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.czi&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">)</span>
+
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;final shape of source image is: </span><span class="si">{</span><span class="n">a_src</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;final shape of target image is: </span><span class="si">{</span><span class="n">a_tgt</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="n">writers</span><span class="o">.</span><span class="n">OmeTiffWriter</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_output</span><span class="p">,</span> <span class="n">source_file</span><span class="p">),</span>
+                        <span class="n">overwrite_file</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+                        <span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">a_src</span><span class="p">,</span> <span class="n">dimension_order</span><span class="o">=</span><span class="s2">&quot;CZYX&quot;</span><span class="p">)</span>
+                    <span class="k">with</span> <span class="n">writers</span><span class="o">.</span><span class="n">OmeTiffWriter</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_output</span><span class="p">,</span> <span class="n">target_file</span><span class="p">),</span>
+                        <span class="n">overwrite_file</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+                        <span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">a_tgt</span><span class="p">,</span> <span class="n">dimension_order</span><span class="o">=</span><span class="s2">&quot;CZYX&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Error in saving images&quot;</span><span class="p">)</span>
+                    <span class="n">composite</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span> <span class="ow">and</span> <span class="n">composite</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Saving composite of alignment&quot;</span><span class="p">)</span>
+                    <span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+                    <span class="k">with</span> <span class="n">writers</span><span class="o">.</span><span class="n">OmeTiffWriter</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">composite_path</span><span class="p">,</span> <span class="n">source_file</span><span class="p">),</span>
+                        <span class="n">overwrite_file</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+                        <span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="n">dimension_order</span><span class="o">=</span><span class="s2">&quot;CZYX&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alignment #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">  failed&quot;</span><span class="p">)</span></div>
+
+    <span class="c1">##############################################################################</span>
+    <span class="c1"># Support Functions</span>
+    <span class="c1">##############################################################################</span>
+
+<div class="viewcode-block" id="Image_Aligner.get_image_list"><a class="viewcode-back" href="../../../aics_tf_registration.core.html#aics_tf_registration.core.image_aligner.Image_Aligner.get_image_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_image_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="n">dir_list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">im_files</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">dir_list</span> <span class="k">if</span> <span class="p">((</span><span class="s2">&quot;.tif&quot;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;.tiff&quot;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;.czi&quot;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">))</span>
+        <span class="p">]</span>
+        <span class="n">im_files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">im_files</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Mark Filip Sluzewski
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
