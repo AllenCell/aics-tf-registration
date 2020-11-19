@@ -34,7 +34,7 @@ pip install git+https://github.com/aics-int/aics_tf_registration.git
 ```
 
 ## Documentation
-For full package documentation please visit [aics-int.github.io/aics_tf_registration](https://aics-int.github.io/aics_tf_registration).
+For full package documentation please visit [allencell.github.io/aics_tf_registration](https://allencell.github.io/aics_tf_registration).
 
 ## Image Requirements for Registration
 In order for the registration algorithm to produce accurate results, the images must have the following requirements:
