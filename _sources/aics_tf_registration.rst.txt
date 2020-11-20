@@ -9,18 +9,6 @@ Subpackages
    aics_tf_registration.bin
    aics_tf_registration.core
 
-Submodules
-----------
-
-aics\_tf\_registration.version module
--------------------------------------
-
-.. automodule:: aics_tf_registration.version
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
 Module contents
 ---------------
 
