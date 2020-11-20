@@ -1,8 +1,7 @@
 # AICS Transfer Function Registration
 
-[![Build Status](https://github.com/aics-int/aics_tf_registration/workflows/Build%20Master/badge.svg)](https://github.com/aics-int/aics_tf_registration/actions)
-[![Documentation](https://github.com/aics-int/aics_tf_registration/workflows/Documentation/badge.svg)](https://aics-int.github.io/aics_tf_registration)
-[![Code Coverage](https://codecov.io/gh/aics-int/aics_tf_registration/branch/master/graph/badge.svg)](https://codecov.io/gh/aics-int/aics_tf_registration)
+[![Build Status](https://github.com/allencell/aics_tf_registration/workflows/Build%20Master/badge.svg)](https://github.com/allencell/aics_tf_registration/actions)
+[![Documentation](https://github.com/allencell/aics_tf_registration/workflows/Documentation/badge.svg)](https://allencell.github.io/aics_tf_registration)
 
 3D rigid registration workflow for generating training/testing data for transfer function model
 
@@ -29,7 +28,7 @@ run_alignment --config_path `path/to/config/file.yaml`
 **Development Head:** 
 ```console
 cd path/to/folder/for/repo
-pip install git+https://github.com/aics-int/aics_tf_registration.git
+pip install git+https://github.com/AllenCell/aics_tf_registration.git
 
 ```
 
