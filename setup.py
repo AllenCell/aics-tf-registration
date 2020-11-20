@@ -8,21 +8,8 @@ from setuptools import find_packages, setup
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
-PACKAGE_NAME = 'aics_tf_registration'
-
 setup_requirements = [
-    "wheel>=0.34.2",
-    "setuptools",
-    'scikit-image>=0.16.2',
-    'aicsimageio>=3.2.0',
-    'SimpleITK>=1.2.4',
-    'numpy>=1.17.3',
-    'scipy>=1.3.1',
-    'pandas>=0.25.2',
-    'tqdm>=4.36.1',
-    'ruamel.yaml',
-    # 'tornado>=6.0.3'
-    # 'pyyaml>5.1.2'
+    "pytest-runner>=5.2",
 ]
 
 test_requirements = [
@@ -51,7 +38,14 @@ dev_requirements = [
 ]
 
 requirements = [
-    setup_requirements,
+    'scikit-image>=0.16.2',
+    'aicsimageio>=3.2.0',
+    'SimpleITK>=1.2.4',
+    'numpy>=1.17.3',
+    'scipy>=1.3.1',
+    'pandas>=0.25.2',
+    'tqdm>=4.36.1',
+    'ruamel.yaml',
 ]
 
 extra_requirements = {
@@ -61,7 +55,6 @@ extra_requirements = {
     "all": [
         *requirements,
         *dev_requirements,
-        *test_requirements,
     ]
 }
 
@@ -76,11 +69,11 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    description="Rigid registration algorithm for generating training/testing data for transfer function model", # noqa
+    description="Rigid registration algorithm for generating training/testing data for transfer function model",
     entry_points={
         "console_scripts": [
-            "run_alignment={}.bin.run_alignment:main".format(PACKAGE_NAME)
-        ]
+            "run_alignment=aics_tf_registration.bin.run_alignment:main"
+        ],
     },
     install_requires=requirements,
     license="Allen Institute Software License",
@@ -92,11 +85,12 @@ setup(
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*"]),
     python_requires=">=3.7",
     setup_requires=setup_requirements,
+    test_suite="aics_tf_registration/tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
-    url="https://github.com/allencell/aics-tf-registration",
+    url="https://github.com/AllenCell/aics_tf_registration",
     # Do not edit this string manually, always use bumpversion
     # Details in CONTRIBUTING.rst
-    version="1.0.0",
+    version="0.1.0",
     zip_safe=False,
 )

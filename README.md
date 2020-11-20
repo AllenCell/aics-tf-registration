@@ -1,9 +1,10 @@
-# AICS Transfer Function Registration
+# aics_tf_registration
 
-[![Build Status](https://github.com/allencell/aics-tf-registration/workflows/Build%20Master/badge.svg)](https://github.com/AllenCell/aics-tf-registration/actions)
-[![Documentation](https://github.com/allencell/aics-tf-registration/workflows/Documentation/badge.svg)](https://allencell.github.io/aics-tf-registration)
+[![Build Status](https://github.com/AllenCell/aics_tf_registration/workflows/Build%20Master/badge.svg)](https://github.com/AllenCell/aics_tf_registration/actions)
+[![Documentation](https://github.com/AllenCell/aics_tf_registration/workflows/Documentation/badge.svg)](https://AllenCell.github.io/aics_tf_registration)
+[![Code Coverage](https://codecov.io/gh/AllenCell/aics_tf_registration/branch/master/graph/badge.svg)](https://codecov.io/gh/AllenCell/aics_tf_registration)
 
-3D rigid registration workflow for generating training/testing data for transfer function model
+Rigid registration algorithm for generating training/testing data for transfer function model
 
 ---
 
@@ -25,15 +26,10 @@ run_alignment --config_path `path/to/config/file.yaml`
 
 ## Installation
 **Stable Release:** `pip install aics_tf_registration`<br>
-**Development Head:** 
-```console
-cd path/to/folder/for/repo
-pip install git+https://github.com/AllenCell/aics_tf_registration.git
-
-```
+**Development Head:** `pip install git+https://github.com/AllenCell/aics_tf_registration.git`
 
 ## Documentation
-For full package documentation please visit [allencell.github.io/aics-tf-registration](https://allencell.github.io/aics-tf-registration).
+For full package documentation please visit [AllenCell.github.io/aics_tf_registration](https://AllenCell.github.io/aics_tf_registration).
 
 ## Image Requirements for Registration
 In order for the registration algorithm to produce accurate results, the images must have the following requirements:
@@ -46,8 +42,5 @@ In order for the registration algorithm to produce accurate results, the images 
 * The resolution/voxel dimensions of the images, or at least the relative scaling differences between the source and target image, should be known to within approximately 3-4 decimal units
 
 
-
-
-***
 ***Free software: Allen Institute Software License***
 

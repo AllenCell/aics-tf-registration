@@ -107,8 +107,3 @@ ENV/
 
 # mypy
 .mypy_cache/
-
-#vscode settings
-/.vscode/settings.json
-.vscode/settings.json
-/.vscode/*.json

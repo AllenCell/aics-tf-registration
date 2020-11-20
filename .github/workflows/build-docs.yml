@@ -17,7 +17,6 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install --upgrade pip
-        pip install setuptools wheel
         pip install .[dev]
     - name: Generate Docs
       run: |
@@ -26,7 +25,7 @@ jobs:
     - name: Publish Docs
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: docs/_build/html/ # The folder the action should deploy.

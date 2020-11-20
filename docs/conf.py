@@ -69,7 +69,7 @@ source_suffix = {
 master_doc = "index"
 
 # General information about the project.
-project = u"AICS Transfer Function Registration"
+project = u"aics_tf_registration"
 copyright = u'2020, Mark Filip Sluzewski'
 author = u"Mark Filip Sluzewski"
 
@@ -154,7 +154,7 @@ latex_elements = {
 # [howto, manual, or own class]).
 latex_documents = [
     (master_doc, "aics_tf_registration.tex",
-     u"AICS Transfer Function Registration Documentation",
+     u"aics_tf_registration Documentation",
      u"Mark Filip Sluzewski", "manual"),
 ]
 
@@ -165,7 +165,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, "aics_tf_registration",
-     u"AICS Transfer Function Registration Documentation",
+     u"aics_tf_registration Documentation",
      [author], 1)
 ]
 
@@ -177,7 +177,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, "aics_tf_registration",
-     u"AICS Transfer Function Registration Documentation",
+     u"aics_tf_registration Documentation",
      author,
      "aics_tf_registration",
      "One line description of project.",

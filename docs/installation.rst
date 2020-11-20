@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install AICS Transfer Function Registration, run this command in your terminal:
+To install aics_tf_registration, run this command in your terminal:
 
 .. code-block:: console
 
     $ pip install aics_tf_registration
 
-This is the preferred method to install AICS Transfer Function Registration, as it will always install the most recent stable release.
+This is the preferred method to install aics_tf_registration, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for AICS Transfer Function Registration can be downloaded from the `Github repo`_.
+The sources for aics_tf_registration can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/mfs4rd/aics_tf_registration
+    $ git clone git://github.com/AllenCell/aics_tf_registration
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/mfs4rd/aics_tf_registration/tarball/master
+    $ curl  -OL https://github.com/AllenCell/aics_tf_registration/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/mfs4rd/aics_tf_registration
-.. _tarball: https://github.com/mfs4rd/aics_tf_registration/tarball/master
+.. _Github repo: https://github.com/AllenCell/aics_tf_registration
+.. _tarball: https://github.com/AllenCell/aics_tf_registration/tarball/master

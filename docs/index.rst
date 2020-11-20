@@ -1,4 +1,4 @@
-Welcome to AICS Transfer Function Registration's documentation!
+Welcome to aics_tf_registration's documentation!
 ======================================
 
 .. toctree::
