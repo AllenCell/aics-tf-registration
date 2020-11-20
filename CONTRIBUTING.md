@@ -17,7 +17,7 @@ Ready to contribute? Here's how to set up `aics_tf_registration` for local devel
 3. Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):
 
     ```bash
-    cd aics_tf_registration/
+    cd aics-tf-registration/
     pip install -e .[dev]
     ```
 

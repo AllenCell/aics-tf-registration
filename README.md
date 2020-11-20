@@ -1,7 +1,7 @@
 # AICS Transfer Function Registration
 
-[![Build Status](https://github.com/allencell/aics_tf_registration/workflows/Build%20Master/badge.svg)](https://github.com/allencell/aics_tf_registration/actions)
-[![Documentation](https://github.com/allencell/aics_tf_registration/workflows/Documentation/badge.svg)](https://allencell.github.io/aics_tf_registration)
+[![Build Status](https://github.com/allencell/aics-tf-registration/workflows/Build%20Master/badge.svg)](https://github.com/AllenCell/aics-tf-registration/actions)
+[![Documentation](https://github.com/allencell/aics-tf-registration/workflows/Documentation/badge.svg)](https://allencell.github.io/aics-tf-registration)
 
 3D rigid registration workflow for generating training/testing data for transfer function model
 
