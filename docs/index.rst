@@ -10,7 +10,6 @@ Welcome to aics_tf_registration's documentation!
    installation
    Package modules <modules>
    contributing
-   math
 
 .. mdinclude:: ../README.md
 
