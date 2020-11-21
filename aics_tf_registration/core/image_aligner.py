@@ -300,7 +300,14 @@ class Image_Aligner:
                 self.save_composite,
             )
 
-            if a_src is not None:
+            if (
+                (a_src is not None) 
+                and (
+                    (self.save_composite and composite is not None) 
+                    or (not self.save_composite and composite is None)
+                    )
+                ):
+                
                 logger.info(f"Alignment #{i} succeeded")
                 if ".czi" in source_file:
                     source_file = source_file.replace(".czi", ".tiff")
