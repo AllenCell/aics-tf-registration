@@ -477,7 +477,14 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span><span class="p">,</span>
             <span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">a_src</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">a_src</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> 
+                <span class="ow">and</span> <span class="p">(</span>
+                    <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span> <span class="ow">and</span> <span class="n">composite</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> 
+                    <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_composite</span> <span class="ow">and</span> <span class="n">composite</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">):</span>
+                
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alignment #</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> succeeded&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="s2">&quot;.czi&quot;</span> <span class="ow">in</span> <span class="n">source_file</span><span class="p">:</span>
                     <span class="n">source_file</span> <span class="o">=</span> <span class="n">source_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.czi&quot;</span><span class="p">,</span> <span class="s2">&quot;.tiff&quot;</span><span class="p">)</span>
